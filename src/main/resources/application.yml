@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: Lobby Management
+
+jwt:
+  secret: gfJyWTOIJEY3mindmefzocsQ11dbwljcAKWYaFqlwL8=
+  expiration-seconds: 3600

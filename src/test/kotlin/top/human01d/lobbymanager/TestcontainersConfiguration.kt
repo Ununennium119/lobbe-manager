@@ -9,10 +9,12 @@ import org.testcontainers.utility.DockerImageName
 @TestConfiguration(proxyBeanMethods = false)
 class TestcontainersConfiguration {
 
-	@Bean
-	@ServiceConnection(name = "redis")
-	fun redisContainer(): GenericContainer<*> {
-		return GenericContainer(DockerImageName.parse("redis:latest")).withExposedPorts(6379)
-	}
+    @Bean
+    @ServiceConnection(name = "redis")
+    fun redisContainer(): GenericContainer<*> {
+        return GenericContainer(
+            DockerImageName.parse("redis:8.0.0")
+        ).withExposedPorts(6379)
+    }
 
 }
