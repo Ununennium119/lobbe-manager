@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>top.human01d</groupId>
-    <artifactId>lobby-management</artifactId>
+    <artifactId>lobby-manager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Lobby Management</name>
-    <description>Lobby Management</description>
+    <description>Lobby Manager</description>
     <url/>
     <licenses>
         <license/>

@@ -1,4 +1,4 @@
-package top.human01d.lobbymanagement
+package top.human01d.lobbymanager
 
 import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection
