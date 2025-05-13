@@ -9,7 +9,7 @@ import top.human01d.lobbymanager.dto.auth.LoginResponse
 import top.human01d.lobbymanager.service.AuthenticationService
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 class AuthenticationController(
     private val service: AuthenticationService,
 ) {

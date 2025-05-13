@@ -5,9 +5,7 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Value
 import top.human01d.lobbymanager.service.JwtService
 import java.util.*
-import kotlin.test.assertEquals
-import kotlin.test.assertNotNull
-import kotlin.test.assertTrue
+import kotlin.test.*
 
 class JwtServiceTest(
     private val jwtService: JwtService,
@@ -20,6 +18,7 @@ class JwtServiceTest(
         "key-1" to "value-1",
         "key-2" to "value-2"
     )
+    private val invalidJwtToken = "invalid-jwt-token"
     private lateinit var jwtToken: String
     private lateinit var beforeGeneration: Date
     private lateinit var afterGeneration: Date
@@ -69,5 +68,15 @@ class JwtServiceTest(
             assertTrue(claims.containsKey(key))
             assertEquals(value, claims[key])
         }
+    }
+
+    @Test
+    fun `token should be invalid`() {
+        assertFalse { jwtService.isTokenValid(invalidJwtToken) }
+    }
+
+    @Test
+    fun `subject should be null`() {
+        assertNull(jwtService.extractSubject(invalidJwtToken))
     }
 }

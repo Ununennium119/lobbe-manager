@@ -52,6 +52,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
         <!-- Kotlin Jackson Object Mapper -->
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
