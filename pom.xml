@@ -66,6 +66,13 @@
             <version>42.7.5</version>
         </dependency>
 
+        <!-- Logging -->
+        <dependency>
+            <groupId>io.github.microutils</groupId>
+            <artifactId>kotlin-logging-jvm</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+
         <!-- Kotlin Jackson Object Mapper -->
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
