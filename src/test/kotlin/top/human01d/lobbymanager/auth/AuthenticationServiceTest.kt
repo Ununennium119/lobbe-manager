@@ -1,7 +1,8 @@
-package top.human01d.lobbymanager
+package top.human01d.lobbymanager.auth
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import top.human01d.lobbymanager.LobbyManagerBaseTest
 import top.human01d.lobbymanager.service.AuthenticationService
 import kotlin.test.assertTrue
 

@@ -1,4 +1,4 @@
-package top.human01d.lobbymanager.service
+package top.human01d.lobbymanager.security
 
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.JwtException

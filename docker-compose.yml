@@ -1,0 +1,18 @@
+name: lobby-manager-dev-tools
+
+services:
+  db:
+    image: postgres:15.13
+    container_name: lobby-manager-postgres
+    restart: no
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: lobby_manager
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:

@@ -1,9 +1,10 @@
-package top.human01d.lobbymanager
+package top.human01d.lobbymanager.auth
 
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Value
-import top.human01d.lobbymanager.service.JwtService
+import top.human01d.lobbymanager.LobbyManagerBaseTest
+import top.human01d.lobbymanager.security.JwtService
 import java.util.*
 import kotlin.test.*
 

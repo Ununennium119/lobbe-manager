@@ -6,16 +6,16 @@ import com.fasterxml.jackson.module.kotlin.kotlinModule
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
-import top.human01d.lobbymanager.configuration.SecurityConfiguration
+import org.springframework.scheduling.annotation.EnableScheduling
 import top.human01d.lobbymanager.configuration.WebMvcConfiguration
 
 @Configuration
 @Import(
     value = [
-        SecurityConfiguration::class,
         WebMvcConfiguration::class,
     ]
 )
+@EnableScheduling
 class LobbyManagerConfiguration {
 
     @Bean

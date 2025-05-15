@@ -1,7 +1,24 @@
 spring:
   application:
     name: Lobby Management
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lobby_manager
+    username: user
+    password: pass
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
 
 jwt:
   secret: gfJyWTOIJEY3mindmefzocsQ11dbwljcAKWYaFqlwL8=
   expiration-seconds: 3600
+
+lobby-manager:
+  code-generation-retries: 10
+  cleanup-interval-ms: 30_000
+  heartbeat-timeout-seconds: 60
