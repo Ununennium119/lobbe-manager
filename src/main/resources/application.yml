@@ -11,6 +11,15 @@ spring:
 jwt:
   expiration-seconds: 3600
 
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
 lobby-manager:
   code-generation-retries: 10
   cleanup-interval-ms: 30_000
