@@ -10,31 +10,9 @@ COPY src/ ./src/
 # Build the application (skip tests in Docker)
 RUN mvn package -DskipTests
 
-# ===== STAGE 2: CUSTOM MINIMAL JRE =====
-FROM eclipse-temurin:17-jre-jammy AS jre-builder
 
-# Create a minimal JRE (~40MB smaller than full JRE)
-RUN jlink \
-    --add-modules java.base,java.logging,java.management \
-    --strip-debug \
-    --no-man-pages \
-    --no-header-files \
-    --compress=2 \
-    --output /opt/jre
-
-# ===== STAGE 3: FINAL SECURE IMAGE =====
-FROM debian:stable-slim
-
-# Install minimal dependencies (if needed)
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy custom JRE from previous stage
-ENV JAVA_HOME=/opt/jre
-ENV PATH="${JAVA_HOME}/bin:${PATH}"
-COPY --from=jre-builder /opt/jre /opt/jre
+# ===== STAGE 2: FINAL SECURE IMAGE =====
+FROM eclipse-temurin:17-jre-jammy AS runtime
 
 # Create non-root user
 RUN groupadd -r spring && useradd -r -g spring spring
