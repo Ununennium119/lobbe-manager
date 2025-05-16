@@ -22,5 +22,6 @@ management:
 
 lobby-manager:
   code-generation-retries: 10
-  cleanup-interval-ms: 30_000
+  user-cleanup-interval-ms: 1_800_000 # 30m
+  lobby-cleanup-interval-ms: 30_000 # 30s
   heartbeat-timeout-seconds: 60

@@ -14,7 +14,7 @@ Accept: application/json
 Authorization: Bearer {{jwtToken}}
 
 {
-  "name": "my-lobby3",
+  "name": "my-lobby",
   "private": false,
   "capacity": 4
 }

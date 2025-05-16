@@ -17,7 +17,7 @@ class LobbyCleanupService(
     private val log = KotlinLogging.logger {}
 
 
-    @Scheduled(fixedRateString = "\${lobby-manager.cleanup-interval-ms}")
+    @Scheduled(fixedRateString = "\${lobby-manager.lobby-cleanup-interval-ms}")
     fun cleanUpInactiveLobbies() {
         val cutoff = Instant.now().minusSeconds(heartbeatTimeoutSeconds)
         val deleted = lobbyRepository.deleteInactiveLobbies(cutoff)
